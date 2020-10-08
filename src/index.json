@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "tag": "./tag/tag",
+    "segmented": "./segmented/segmented"
+  }
+}

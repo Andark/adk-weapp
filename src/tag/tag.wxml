@@ -1,0 +1,5 @@
+<!-- ans/lib/tag/tag.wxml -->
+<view class="ans-tag ans-tag-{{size}} {{colorClass}} ex-class {{checkable ? 'ans-tag-checkable' : ''}} {{checked ? checkedClass : ''}}" style="{{exStyle}}" bindtap="onTap">
+  <slot></slot>
+  <text class="ans-icon icon-close" wx:if="{{closable}}" catchtap="onClose"></text>
+</view>

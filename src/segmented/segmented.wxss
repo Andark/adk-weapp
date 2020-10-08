@@ -1,0 +1,103 @@
+:root {
+  --segmented-height: 32px;
+  --segmented-item-height: 28px;
+}
+
+.segmented-control {
+  box-sizing: border-box;
+  position: relative;
+  white-space: nowrap;
+  min-height: 0;
+  height: var(--segmented-height, 32px);
+  background-color: #f5f5f5;
+}
+
+.segmented-control .segmented-item {
+  box-sizing: border-box;
+  display: inline-block;
+  vertical-align: middle;
+  min-width: 100px;
+  padding: 2px;
+  position: relative;
+  z-index: 1;
+}
+
+.segmented-control .segmented-item-content {
+  box-sizing: border-box;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 12px;
+  height: var(--segmented-item-height, 28px);
+  font-size: 14px;
+  line-height: 20px;
+  color: #888888;
+  outline: none;
+  border-radius: 4px;
+  transition: background-color 0.1s;
+}
+
+.segmented-control .segmented-item-hover .segmented-item-content {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.segmented-control .segmented-active .segmented-item-content {
+  color: #333333;
+}
+
+.segmented-control .segmented-highlight {
+  box-sizing: border-box;
+  outline: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: var(--segmented-height, 32px);
+  z-index: 0;
+  transition: all 0.2s;
+}
+.segmented-control .segmented-highlight::after {
+  box-sizing: border-box;
+  content: " ";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  border-radius: 4px;
+  background-color: #ffffff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+/* 布局 */
+.segmented-layout-center {
+  display: flex;
+  justify-content: center;
+}
+
+.segmented-layout-center .segmented-item {
+  flex: 1 0 auto;
+}
+
+/* iOS14外观 */
+.segmented-theme-ios14 {
+  background-color: #ffffff;
+  border: 1px solid #1890ff;
+  border-radius: 4px;
+}
+.segmented-theme-ios14 .segmented-item {
+  border-left: 1px solid #1890ff;
+  padding: 0;
+}
+.segmented-theme-ios14 .segmented-item:first-child {
+  border-left: none;
+}
+.segmented-theme-ios14 .segmented-item .segmented-item-content {
+  border-radius: 0;
+  height: 30px;
+  color: #1890ff;
+}
+.segmented-theme-ios14 .segmented-active .segmented-item-content {
+  background-color: #1890ff;
+  color: #ffffff;
+}

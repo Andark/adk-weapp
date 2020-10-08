@@ -1,0 +1,16 @@
+<block wx:if="{{scrollable}}">
+    <scroll-view scroll-x class="segmented-control segmented-theme-{{theme}} ex-class" style="{{exStyle}}" bindscroll="onScroll">
+        <view id="sc-{{index}}" data-index="{{index}}" class="segmented-item {{index === current ? 'segmented-active' : ''}}" hover-class="segmented-item-hover" wx:for="{{values}}" wx:key="index" bindtap="onTap">
+            <view class="segmented-item-content">{{item}}</view>
+        </view>
+        <view wx:if="{{theme == 'ios12'}}" class="segmented-highlight" style="transform:translateX({{highlightLeft}}px);width:{{highlightWidth}}px;"></view>
+    </scroll-view>
+</block>
+<block wx:else>
+    <view class="segmented-control segmented-layout-center segmented-theme-{{theme}} ex-class" style="{{exStyle}}">
+        <view id="sc-{{index}}" data-index="{{index}}" class="segmented-item {{index === current ? 'segmented-active' : ''}}" hover-class="segmented-item-hover" wx:for="{{values}}" wx:key="index" bindtap="onTap">
+            <view class="segmented-item-content">{{item}}</view>
+        </view>
+        <view wx:if="{{theme == 'ios12'}}" class="segmented-highlight" style="transform:translateX({{highlightLeft}}px);width:{{highlightWidth}}px;"></view>
+    </view>
+</block>
